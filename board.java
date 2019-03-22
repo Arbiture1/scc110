@@ -8,7 +8,7 @@ public class Board // Creates a class called Board
     JPanel panel = new JPanel(); // Creates an instance of jpanel called panel inside of Board 
     JFrame  window = new JFrame (); //Creates an instance of JFrame called  window insode of board
   }
- public static void main (String args[]) // This method is exucutd first when Board is run 
+  public static void main (String args[]) // This method is exucutd first when Board is run 
   {
     JPanel panel = new JPanel(); // Creates an instance of jpanel called panel inside of Board 
     JFrame  window = new JFrame (); //Creates an instance of JFrame called  window insode of board
@@ -25,16 +25,16 @@ public class Board // Creates a class called Board
       }
       else if ((count) % 2 != 0 ) // if integer not evenly divisible by 2 and hence not even 
       {
-        Pattern[i]= new Square(1);// creates square with a value of 1 to feed to th constructor 
+        Pattern[i]= new Square(1);// creates square with a value of 1 to feed to the constructor 
         
       }
-     else if ((count)%8 == 0)
-     {
-      count++;
+      else if ((count)%8 == 0)// when count is evenly divisible by 8  it is at the end of the 8x8 grid thus this is the last tile in a row 
+      {
+       count++;// Creates an offset for the next row 
        
        Pattern[i]= new Square(1);
-       
-     }
+       count--;
+      }
       panel.add(Pattern[i].button); 
       count++;
       System.out.println("i:" + i);     
