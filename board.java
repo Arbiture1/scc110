@@ -18,7 +18,7 @@ public class Board // Creates a class called Board
     for(int i=1; i<=64;i++)// initalises and counts through a for loop for the 1D array 
     {
       
-      if ((count) % 2  == 0 && (count) % 8 != 0) 
+      if ((count) % 2  == 0 && (count) % 8 != 0) // set condition for loop if 
       {
         Pattern[i]= new Square(0);
         
@@ -36,7 +36,7 @@ public class Board // Creates a class called Board
        
      }
       panel.add(Pattern[i].button); 
-      count--;
+      count++;
       System.out.println("i:" + i);     
       System.out.println("count: " + count);
     }
