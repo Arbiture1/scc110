@@ -1,58 +1,93 @@
 import javax.swing.*;
 import java.awt.*;
-
-public class Board // Creates a class called Board 
+/**  Creates a class called Board that represent the game board  */
+public class Board 
 {
+  /** Method used to place components on the board */
   public Board()
   {
-    JPanel panel = new JPanel(); // Creates an instance of jpanel called panel inside of Board 
+    /** Creates an instance of jpanel called panel inside of Board */ 
+    JPanel panel = new JPanel(); 
+     /**Creates an instance of JFrame called  window insode of board*/ 
     JFrame  window = new JFrame (); //Creates an instance of JFrame called  window insode of board
   }
-  public static void main (String args[]) // This method is exucutd first when Board is run 
-  {
-    JPanel panel = new JPanel(); // Creates an instance of jpanel called panel inside of Board 
-    JFrame  window = new JFrame (); //Creates an instance of JFrame called  window insode of board
+  
+  /**This method is exucuted first when Board is run and is used to control the behaviour of things in board */ 
+  public static void main (String args[]) 
+  { /** Creates an instance of jpanel called panel inside of Board */
+    JPanel panel = new JPanel(); 
+    /**Creates an instance of JFrame called  window insode of board*/
+    JFrame  window = new JFrame (); 
+    /**Creates an array of squares and calls it pattern  */
     Square [] Pattern = new Square[100]; 
-    GridLayout Gridzy_Boi= new GridLayout(8,8);
+    /**Sets the layout type to Grid type and calls it Grid  */
+    GridLayout Grid= new GridLayout(8,8);
+    
+    /**initalises count to 0 */
     int count = 0;
-    for(int i=1; i<=64;i++)// initalises and counts through a for loop for the 1D array 
+
+    /**initalises and counts through a for loop for the 1D array  */
+    for(int i=1; i<=64;i++) 
     {
-      
-      if ((count) % 2  == 0 && (count) % 8 != 0) // set condition for loop if  the integer is evenly divisable by 2 hence even and count is not divisible by 8 hence not end row   
+      /** set condition for loop if  the integer is evenly divisable by 2 hence even and count is not divisible by 8 hence not end row */
+      if ((count) % 2  == 0 && (count) % 8 != 0)   
       {
-        Pattern[i]= new Square(0);// if conditions met creates a new square with an value of 0 to be fed to the square constructor 
+        /**if conditions met creates a new square with an value of 0 to be fed to the square constructor  */
+        Pattern[i]= new Square(0);  
         
       }
-      else if ((count) % 2 != 0 ) // if integer not evenly divisible by 2 and hence not even 
+
+      /** if integer not evenly divisible by 2 and hence not even */
+      else if ((count) % 2 != 0 )
       {
-        Pattern[i]= new Square(1);// creates square with a value of 1 to feed to the constructor 
+        /**creates square with a value of 1 to feed to the constructor */
+        Pattern[i]= new Square(1);  
         
       }
-      else if ((count)%8 == 0)// when count is evenly divisible by 8  it is at the end of the 8x8 grid thus this is the last tile in a row 
+
+      /**when count is evenly divisible by 8  it is at the end of the 8x8 grid thus this is the last tile in a row  */
+      else if ((count)%8 == 0) 
       {
-       count++;// Creates an offset for the next row 
-       
-       Pattern[i]= new Square(1);
-       count--;
+       /**Creates an offset for the next row */
+       count++;
+
+       /**creates square with a value of 1 to feed to the constructor*/
+       Pattern[i]= new Square(1); 
+        
       }
+
+      /**adds a button to the panel */
       panel.add(Pattern[i].button); 
-      count++;
-      System.out.println("i:" + i);     
-      System.out.println("count: " + count);
-    }
 
-    for (int i=0; i<=63;i++)// initalises and counts through a for loop for the 1D array 
+      /**increments count */
+      count++;  
+
+      /**returns value for interger */
+      System.out.println("i:" + i); 
+      /**returns values for */
+      System.out.println("count: " + count); 
+
+    }
+     /**initalises and counts through a for loop for the 1D array */
+    for (int i=0; i<=63;i++) 
    
-   {
-      System.out.println(Pattern[i]);
-
+    {
+      /**prints the array*/
+      System.out.println(Pattern[i]);  
     }
+
+    /**sets the pane to panel */
     window.setContentPane(panel);  
-    window.setVisible(true);// makes window visible 
-    window.setSize(800,800);// set window size 
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//exits program on close 
-    panel.setVisible(true);// makes panel visible 
-    panel.setLayout(Gridzy_Boi);
+    /** makes window visible */
+    window.setVisible(true);  
+    /** set window size*/
+    window.setSize(800,800);  
+    /** exits program on close*/
+    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+    /**makes panel visible */
+    panel.setVisible(true);  
+    /**sets layout to Grid type */
+    panel.setLayout(Grid);  
   
   
   }
