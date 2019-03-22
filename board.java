@@ -36,7 +36,7 @@ public class Board // Creates a class called Board
        
      }
       panel.add(Pattern[i].button); 
-      count++;
+      count--;
       System.out.println("i:" + i);     
       System.out.println("count: " + count);
     }
