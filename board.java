@@ -18,14 +18,14 @@ public class Board // Creates a class called Board
     for(int i=1; i<=64;i++)// initalises and counts through a for loop for the 1D array 
     {
       
-      if ((count) % 2  == 0 && (count) % 8 != 0) // set condition for loop if 
+      if ((count) % 2  == 0 && (count) % 8 != 0) // set condition for loop if  the integer is evenly divisable by 2 hence even and count is not divisible by 8 hence not end row   
       {
-        Pattern[i]= new Square(0);
+        Pattern[i]= new Square(0);// if conditions met creates a new square with an value of 0 to be fed to the square constructor 
         
       }
-      else if ((count) % 2 != 0 )
+      else if ((count) % 2 != 0 ) // if integer not evenly divisible by 2 and hence not even 
       {
-        Pattern[i]= new Square(1);
+        Pattern[i]= new Square(1);// creates square with a value of 1 to feed to th constructor 
         
       }
      else if ((count)%8 == 0)
