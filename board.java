@@ -51,7 +51,7 @@ public class Board
        /**Creates an offset for the next row */
        count++;
 
-       /**creates square with a value of 1 to feed to the constructor*/
+      
        Pattern[i]= new Square(1); 
         
       }
